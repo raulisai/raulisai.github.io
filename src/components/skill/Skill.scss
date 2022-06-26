@@ -1,0 +1,208 @@
+@import "../../global.scss";
+
+
+$PorcentSkill: 60%;
+
+.skill {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile{
+    justify-content: space-around;
+  }
+
+
+  h1 {
+    font-size: 50px;
+
+    @include mobile{
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 50px;
+    text-align: center;
+
+    @include mobile{
+      font-size: 20px;
+    }
+  }
+  
+  h3 {
+    font-size: 18px;
+    text-align: center;
+
+    @include mobile{
+      font-size: 20px;
+    }
+  }
+  h4 {
+    font-size: 15px;
+    text-align: center;
+     
+    @include mobile{
+      font-size: 20px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile{
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .barraProgres{
+      
+    }
+
+    .card {
+      width: 300px;
+      height: 80%;
+      border-radius: 10px;
+      box-shadow: 0px 10px 15px -8px black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
+      transition: all 2s ease;
+
+      @include mobile{
+        height: 180px;
+        margin: 10px 0;
+      }
+
+      &.featured{
+          width: 300px;
+          height: 83%;
+          margin: 0 30px;
+
+          @include mobile{
+            width: 250px;
+            height: 180px;
+            margin: 1px;
+          }
+      }
+
+      &:hover{
+          transform: scale(1.1);
+      }
+
+      .barras {
+       
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .progress-bar {
+          background-color: crimson;
+          height: 20px;
+          padding: 5px;
+          width: 90%;         
+          border-radius: 15px;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.993) inset, 0 1px 0 #444;    
+          overflow-y: hidden       
+        }
+        
+        .progress-bar span {
+          display: inline-block;
+          height: 100%;
+          border-radius: 3px;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+          transition: width .4s ease-in-out; 
+          background-color: #ccc;   
+        }
+        
+        /**** GRADIENTS ****/
+        .blue span {
+          background-color: #34c2e3;   
+        }
+        
+        .orange span {
+          background-color: #fecf23;
+          background-image: linear-gradient(top, #fecf23, #fd9215);  
+        }   
+        
+        .green span {
+          background-color: #a5df41;
+          background-image: linear-gradient(top, #a5df41, #4ca916);  
+        }
+        
+        /**** STRIPES ****/
+        .stripes span {
+          background-size: 30px 30px;
+          background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);            
+        
+          animation: animate-stripes 3s linear infinite;             
+        }
+        
+        @keyframes animate-stripes {
+          0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+        }
+        
+        /**** SHINE ****/
+        .shine span {
+          position: relative;
+        }
+        
+        .shine span::after {
+          content: '';
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: #fff;
+          border-radius: 3px;
+          animation: animate-shine 2s ease-out infinite;             
+        }
+        
+        @keyframes animate-shine {
+          0% {opacity: 0; width: 0;}
+          50% {opacity: .5;}
+          100% {opacity: 0; width: 95%;}
+        }
+        
+        /**** GLOW ****/
+        .glow span {
+          box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;    
+          animation: animate-glow 1s ease-out infinite;          
+        }
+        
+        @keyframes animate-glow {
+          0% { box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;} 
+          50% { box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+          100% { box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+        }
+
+
+        .imagenbarraskill{
+
+          
+          .img{
+           width: 33%;
+           display: block;
+           margin: auto;
+        
+          }
+        }
+
+      }
+
+
+
+
+    }
+  }
+}
